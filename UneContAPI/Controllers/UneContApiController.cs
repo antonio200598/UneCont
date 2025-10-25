@@ -65,6 +65,19 @@ public class UneContApiController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    
+    [HttpGet("Get-NotaFiscal")]
+    public IActionResult GetNotasFiscais() 
+    { 
+        try
+        {
+            var notasFiscais = _notaFiscalBus.GetAll();
 
-
+            return Ok(notasFiscais);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }

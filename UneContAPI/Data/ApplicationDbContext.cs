@@ -17,29 +17,29 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Models.Servico> Servico { get; set; }
 
-  protected override void OnModelCreating(ModelBuilder modelBuilder)
-  {
-    modelBuilder.Entity<NotaFiscal>().ToTable("NotaFiscal");
-    modelBuilder.Entity<Prestador>().ToTable("NotaFiscal_Prestador");
-    modelBuilder.Entity<Tomador>().ToTable("NotaFiscal_Tomador");
-    modelBuilder.Entity<Servico>().ToTable("NotaFiscal_Servico");
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      modelBuilder.Entity<NotaFiscal>().ToTable("NotaFiscal");
+      modelBuilder.Entity<Prestador>().ToTable("NotaFiscal_Prestador");
+      modelBuilder.Entity<Tomador>().ToTable("NotaFiscal_Tomador");
+      modelBuilder.Entity<Servico>().ToTable("NotaFiscal_Servico");
 
-    modelBuilder.Entity<NotaFiscal>()
-        .HasOne(n => n.Prestador)
-        .WithMany()
-        .HasForeignKey(n => n.Prestador.Id)
-        .HasConstraintName("FK_Prestador");
+      modelBuilder.Entity<NotaFiscal>()
+          .HasOne(n => n.Prestador)
+          .WithMany()
+          .HasForeignKey(n => n.PrestadorId)
+          .HasConstraintName("FK_Prestador");
 
-    modelBuilder.Entity<NotaFiscal>()
-        .HasOne(n => n.Tomador)
-        .WithMany()
-        .HasForeignKey(n => n.Tomador.Id)
-        .HasConstraintName("FK_Tomador");
+      modelBuilder.Entity<NotaFiscal>()
+          .HasOne(n => n.Tomador)
+          .WithMany()
+          .HasForeignKey(n => n.TomadorId)
+          .HasConstraintName("FK_Tomador");
 
-    modelBuilder.Entity<NotaFiscal>()
-        .HasOne(n => n.Servico)
-        .WithMany()
-        .HasForeignKey(n => n.Servico.Id)
-        .HasConstraintName("FK_Servico");
-  }
+      modelBuilder.Entity<NotaFiscal>()
+          .HasOne(n => n.Servico)
+          .WithMany()
+          .HasForeignKey(n => n.ServicoId)
+          .HasConstraintName("FK_Servico");
+    }
 }

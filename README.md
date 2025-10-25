@@ -40,11 +40,13 @@ Antes de executar o projeto, você precisará ter instalado:
 
 Urls para uso no postman:
 
-Save-Notafiscal(Requisição tipo Post): https://localhost:7077/api/UneContApi/Save-NotaFiscal 
+- Save-Notafiscal(Requisição tipo Post): https://localhost:7077/api/UneContApi/Save-NotaFiscal 
 
-Get-NotaFiscal(Requisição tipo Get): https://localhost:7077/api/UneContApi/Get-NotaFiscal
+- Get-NotaFiscal(Requisição tipo Get): https://localhost:7077/api/UneContApi/Get-NotaFiscal
 
-Formatos dos documentos XMLs usados:
+- Formatos dos documentos XMLs usados:
+
+```xml
 
 <NotaFiscal>
     <Numero>67890</Numero>

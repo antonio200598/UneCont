@@ -46,6 +46,8 @@ Get-NotaFiscal(Requisição tipo Get): https://localhost:7077/api/UneContApi/Get
 
 Formatos dos documentos XMLs usados:
 
+```xml
+
 <NotaFiscal>
     <Numero>67890</Numero>
     <Prestador>

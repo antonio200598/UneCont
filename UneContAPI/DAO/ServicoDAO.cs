@@ -1,5 +1,6 @@
 using UneContAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using UneContAPI.Models;
 
 namespace UneContAPI.DAO;
 
@@ -12,10 +13,12 @@ public class ServicoDAO
         _context = context;
     }
 
-    public void Insert(Models.Servico servico)
+    public Servico Insert(Models.Servico servico)
     {
         _context.Servico.Add(servico);
         _context.SaveChanges();
+
+        return servico;
     }
 
     public Models.Servico GetById(long id)

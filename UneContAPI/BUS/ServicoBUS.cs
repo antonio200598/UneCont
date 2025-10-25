@@ -12,9 +12,11 @@ public class ServicoBUS
         _dao = dao;
     }
 
-    public void Cadastrar(Servico entity)
+    public Servico Cadastrar(Servico entity)
     {
-        _dao.Insert(entity);
+        var servico = _dao.Insert(entity);
+
+        return servico;
     }
 
     public Servico GetById(long id)

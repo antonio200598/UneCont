@@ -1,5 +1,6 @@
 using UneContAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using UneContAPI.Models;
 
 namespace UneContAPI.DAO;
 
@@ -12,10 +13,12 @@ public class PrestadorDAO
         _context = context;
     }
 
-    public void Insert(Models.Prestador prestador)
+    public Prestador Insert(Models.Prestador prestador)
     {
         _context.Prestador.Add(prestador);
         _context.SaveChanges();
+
+        return prestador;
     }
 
     public Models.Prestador GetById(long id)

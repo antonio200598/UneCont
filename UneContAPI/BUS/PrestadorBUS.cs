@@ -12,9 +12,11 @@ public class PrestadorBUS
       _dao = dao;
     }
 
-    public void Cadastrar(Prestador entity)
+    public Prestador Cadastrar(Prestador entity)
     {
-        _dao.Insert(entity);
+        var prestador = _dao.Insert(entity);
+
+        return prestador;
     }
 
     public Prestador GetById(long id)

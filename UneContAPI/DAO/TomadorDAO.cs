@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UneContAPI.Data;
+using UneContAPI.Models;
 
 namespace UneContAPI.DAO;
 
@@ -12,13 +13,15 @@ public class TomadorDAO
         _context = context;
     }
 
-    public void Insert(Models.Tomador tomador)
+    public Tomador Insert(Models.Tomador tomador)
     {
         _context.Tomador.Add(tomador);
         _context.SaveChanges();
+
+        return tomador;
     }
 
-    public Models.Tomador GetById(long id)
+  public Models.Tomador GetById(long id)
     {
         return _context.Tomador.FirstOrDefault(t => t.Id == id);
     }

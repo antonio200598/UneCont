@@ -12,9 +12,10 @@ public class TomadorBUS
         _dao = dao;
     }
 
-    public void Cadastrar(Tomador entity)
+    public Tomador Cadastrar(Tomador entity)
     {
-        _dao.Insert(entity);
+        var tomador = _dao.Insert(entity);
+        return tomador;
     }
 
     public Tomador GetById(long id)

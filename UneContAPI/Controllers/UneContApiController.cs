@@ -37,6 +37,24 @@ public class UneContApiController : ControllerBase
 
         try
         {
+          
+           var prestador = _prestadorBUS.GetByCNPJ(notaFiscal.Prestador.CNPJ);
+          
+            if(prestador == null)
+              prestador = _prestadorBUS.Cadastrar(notaFiscal.Prestador);
+
+            var tomador = _tomadorBUS.GetByCNPJ(notaFiscal.Tomador.CNPJ);
+            
+            if(tomador == null)
+              tomador = _tomadorBUS.Cadastrar(notaFiscal.Tomador);
+            
+            var servico = _servicoBUS.Cadastrar(notaFiscal.Servico);
+
+            notaFiscal.Prestador = prestador;
+
+            notaFiscal.Tomador = tomador;
+
+            notaFiscal.Servico = servico;
 
             _notaFiscalBus.InsertNotaFiscal(notaFiscal);
 

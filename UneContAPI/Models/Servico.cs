@@ -10,5 +10,5 @@ public class Servico
   public string Descricao { get; set; }
 
   [XmlElement("Valor")]
-  public decimal Valor { get; set; }
+  public decimal Value { get; set; }
 }

@@ -13,7 +13,7 @@ No momento existe dois endpoints para essa Api, no qual um é para inserção da
 - **Banco de Dados:** SqlServer
 - **ORM:** Entity Framework Core
 - **Controle de versão:** Git + GitHub
-
+- **Ferramentas para Teste:** Postman(pode ser usado o insomnia também)
 ---
 
 ## ⚙️ Configuração e Execução Local
@@ -36,4 +36,27 @@ Antes de executar o projeto, você precisará ter instalado:
 3. Segue o link dos scripts das tabelas usadas: [Migrations](Migrations).
 4. Após tudo configurado, rode a aplicação.
 
-  
+### Observações:
+
+Urls para uso no postman:
+
+Save-Notafiscal(Requisição tipo Post): https://localhost:7077/api/UneContApi/Save-NotaFiscal 
+
+Get-NotaFiscal(Requisição tipo Get): https://localhost:7077/api/UneContApi/Get-NotaFiscal
+
+Formatos dos documentos XMLs usados:
+
+<NotaFiscal>
+    <Numero>67890</Numero>
+    <Prestador>
+        <CNPJ>22345678000177</CNPJ>
+    </Prestador>
+    <Tomador>
+        <CNPJ>88765432000166</CNPJ>
+    </Tomador>
+    <DataEmissao>2023-12-05</DataEmissao>
+    <Servico>
+        <Descricao>Serviços de manutenção de sistemas</Descricao>
+        <Valor>2400.00</Valor>
+    </Servico>
+</NotaFiscal>

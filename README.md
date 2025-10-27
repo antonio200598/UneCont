@@ -32,7 +32,7 @@ Antes de executar o projeto, você precisará ter instalado:
    ```bash
    git clone https://github.com/antonio200598/UneCont.git
    cd UneCont/UneContAPI
-2. Para Comunicação com o banco de dados crie uma banco com o nome UneCont ou edite na classe [Program.cs](/UneContAPI/Program.cs) para que use um existente no seu sql server.
+2. Para Comunicação com o banco de dados, crie uma banco com o nome UneCont e coloque suas credenciais na classe [appsettings.json](/UneContAPI/appsettings.json).
 3. Segue o link dos scripts das tabelas usadas: [Migrations](Migrations).
 4. Após tudo configurado, rode a aplicação.
 

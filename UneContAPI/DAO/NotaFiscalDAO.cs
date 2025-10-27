@@ -35,5 +35,14 @@ public class NotaFiscalDAO
                 .Include(nf => nf.Tomador)
                 .Include(nf => nf.Servico)
                 .FirstOrDefault(nf => nf.Id == id);
-  }
+    }
+
+    public Models.NotaFiscal GetByNumero(long numero)
+    {
+      return _context.NotaFiscal
+              .Include(nf => nf.Prestador)
+              .Include(nf => nf.Tomador)
+              .Include(nf => nf.Servico)
+              .FirstOrDefault(nf => nf.Numero == numero);
+    }
 }

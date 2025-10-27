@@ -37,8 +37,12 @@ public class UneContApiController : ControllerBase
 
         try
         {
-          
-           var prestador = _prestadorBUS.GetByCNPJ(notaFiscal.Prestador.CNPJ);
+            var numero = _notaFiscalBus.GetByNumero(notaFiscal.Numero);
+
+            if(numero != null)
+              return BadRequest("Nota Fiscal já existe no banco de dados.");
+
+            var prestador = _prestadorBUS.GetByCNPJ(notaFiscal.Prestador.CNPJ);
           
             if(prestador == null)
               prestador = _prestadorBUS.Cadastrar(notaFiscal.Prestador);

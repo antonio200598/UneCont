@@ -35,7 +35,7 @@ public class NotaFiscalBUS
         return nf;
     }
 
-    public NotaFiscal GetByNumero(long numero)
+    public bool GetByNumero(long numero)
     {
         var nf = _dao.GetByNumero(numero);
 
